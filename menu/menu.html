@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="menu-header">
+        <h1>Ahara Leaf</h1>
+        <p>Select Your Items</p>
+    </div>
+
+    <!-- MENU CONTAINER -->
+    <div class="menu-container">
+        <div id="menu-items">
+            <!-- Categories and items will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- CART BAR -->
+    <div class="cart-bar">
+        <h3>Total: Rs <span id="total-amount">0.00</span></h3>
+        <button onclick="proceedToOrder()" class="proceed-btn">Proceed</button>
+    </div>
+
+    <script src="./menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6fb;
+}
+
+/* ================= DASHBOARD WRAPPER ================= */
+.board {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #6a0dad, #9c27b0);
+    color: white;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.sidebar button {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.sidebar button:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateX(5px);
+}
+
+.logout-btn {
+    margin-top: auto;
+    background: #ff4d4d !important;
+}
+
+.logout-btn:hover {
+    background: #ff1a1a !important;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* ================= SECTION CARDS ================= */
+#ordersContainer,
+#orderDetailsContainer,
+#revenueContainer {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ================= HEADINGS ================= */
+h2 {
+    color: #6a0dad;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* ================= TABLES ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+table thead {
+    background: #6a0dad;
+    color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+table tbody tr:hover {
+    background-color: #f3e8ff;
+}
+
+/* ================= TABLE BUTTON ================= */
+.table-btn {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+    background: #6a0dad;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.table-btn:hover {
+    background: #4a0072;
+}
+
+/* ================= EXTRA INFO ================= */
+#extraChargeMessage {
+    margin-top: 10px;
+    font-weight: 600;
+    color: red;
+}
+
+#feedbackStars {
+    color: #ffcc00;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .board {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar button {
+        flex: 1 1 40%;
+        margin: 5px;
+    }
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
