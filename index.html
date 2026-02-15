@@ -14,8 +14,7 @@
         <h1 class="logo">Ahara Leaf</h1>
 
         <div class="header-buttons">
-            <button id="themeToggle">🌙</button>
-            <button id="adminLogin" class="hidden" onclick="redirectToLogin()">Admin Login</button>
+            <button id="adminLogin" onclick="redirectToLogin()">Admin Login</button>
         </div>
     </header>
 
@@ -55,13 +54,14 @@
         function redirectToMenuHomepage() {
             window.location.href = "menu/menu-homepage.html";
         }
-        document.addEventListener("keydown", function (event) {
+        /*document.addEventListener("keydown", function (event) {
             if (event.ctrlKey && event.shiftKey && event.key === "L") {
                 let adminLogin = document.getElementById("adminLogin");
                 adminLogin.classList.toggle("hidden");
             }
-        });
+        });*/
 
+        /*
         // DARK MODE TOGGLE
         const themeToggle = document.getElementById("themeToggle");
 
@@ -82,6 +82,7 @@
                 themeToggle.textContent = "🌙";
             }
         });
+        */
 
         // IMAGE CAROUSEL
         const slides = document.querySelectorAll(".slide");
