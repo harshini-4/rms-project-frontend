@@ -123,94 +123,13 @@ footer {
     align-items: center;
 }
 
-.image-section img {
-    max-height: 70vh;
-    max-width: 480px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    transition: transform 0.5s ease;
-}
-
-.image-section img:hover {
-    transform: scale(1.05);
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px;
-    }
-
-    .image-section {
-        margin-top: 40px;
-    }
-
-    .content h2 {
-        font-size: 36px;
-    }
-}
-
-/* HEADER BUTTON GROUP */
-.header-buttons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-
-
-/* ================= DARK MODE ================= */
-/*
-body.dark-mode {
-    background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
-    color: white;
-}
-
-body.dark-mode header {
-    background: linear-gradient(90deg, #2b2b2b, #3a3a3a);
-}
-
-body.dark-mode footer {
-    background: #1e1e1e;
-}
-
-body.dark-mode .content h2 {
-    color: #ffffff;
-}
-
-body.dark-mode .content p {
-    color: #cccccc;
-}
-
-body.dark-mode .primary-btn {
-    background: linear-gradient(90deg, #bb86fc, #9c27b0);
-}
-
-body.dark-mode #themeToggle {
-    background: #333;
-    color: white;
-}
-*/
 /* ================= CAROUSEL ================= */
-
 .carousel {
     position: relative;
-    width: 480px;
-    height: 350px;
+    width: 100%;
+    max-width: 500px;
+    height: 380px;
+    aspect-ratio: 16/9; /* responsive height */
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -224,6 +143,8 @@ body.dark-mode #themeToggle {
 
 .slide {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -262,10 +183,56 @@ body.dark-mode #themeToggle {
     right: 10px;
 }
 
-/* RESPONSIVE */
+/* HEADER BUTTON GROUP */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .image-section {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .carousel {
         width: 100%;
+        max-width: 400px;
+        aspect-ratio: 16/9;
         height: 280px;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .content h2 {
+        font-size: 28px;
     }
 }
