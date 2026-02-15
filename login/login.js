@@ -42,3 +42,8 @@ function togglePassword() {
         btn.textContent = "Show";
     }
 }
+
+// Redirect to homepage
+function goHome() {
+    window.location.href = "../index.html"; // Update with your actual homepage path
+}
