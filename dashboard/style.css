@@ -1,4 +1,4 @@
-/* ================= GLOBAL ================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -7,175 +7,194 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f4f6fb;
+    background: linear-gradient(135deg, #f4f6fb 0%, #e8ecf8 100%);
+    color: #333;
 }
 
-/* ================= DASHBOARD WRAPPER ================= */
-.board {
+/* DASHBOARD HEADER */
+.dashboard-header {
+    max-width: 1200px;
+    margin: 40px auto 30px auto;
     display: flex;
-    min-height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
 }
 
-/* ================= SIDEBAR ================= */
-.sidebar {
-    width: 240px;
-    background: linear-gradient(180deg, #6a0dad, #9c27b0);
-    color: white;
-    padding: 25px 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 22px;
+.dashboard-header h1 {
+    color: #6a0dad;
+    font-size: 34px;
     font-weight: 600;
-    color: white;
-    letter-spacing: 1px;
 }
 
-.sidebar button {
-    margin-bottom: 15px;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: 500;
+/* Logout button */
+.logout-btn {
+    background: #ff4d4d;
+    color: white;
     border: none;
+    padding: 12px 24px;
     border-radius: 10px;
     cursor: pointer;
-    background: rgba(255,255,255,0.15);
-    color: white;
-    transition: 0.3s ease;
-}
-
-.sidebar button:hover {
-    background: rgba(255,255,255,0.3);
-    transform: translateX(5px);
-}
-
-.logout-btn {
-    margin-top: auto;
-    background: #ff4d4d !important;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-    background: #ff1a1a !important;
+    background: #ff1a1a;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ================= MAIN CONTENT ================= */
-.main-content {
-    flex: 1;
-    padding: 30px;
+/* DASHBOARD CARDS */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
 }
 
-/* ================= SECTION CARDS ================= */
-#ordersContainer,
-#orderDetailsContainer,
-#revenueContainer {
-    background: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    animation: fadeIn 0.5s ease-in-out;
+.card {
+    flex: 1 1 250px;
+    background: linear-gradient(145deg, #ffffff, #f7f7f7);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* ================= HEADINGS ================= */
-h2 {
+.card h2 {
     color: #6a0dad;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-h3 {
-    margin-top: 20px;
     margin-bottom: 10px;
-    color: #444;
+    font-size: 22px;
 }
 
-/* ================= TABLES ================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 14px;
+.card p {
+    color: #555;
+    font-size: 14.5px;
 }
 
-table thead {
-    background: #6a0dad;
-    color: white;
+.card::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: rgba(106, 13, 173, 0.05);
+    transform: rotate(25deg);
+    transition: all 0.5s ease;
 }
 
-table th, table td {
-    padding: 12px;
+.card:hover::after {
+    transform: rotate(25deg) scale(1.2);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* REVENUE SECTION */
+#revenueContainer {
+    background: linear-gradient(145deg, #ffffff, #f9f9fc);
+    padding: 35px 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    margin: 40px auto;
+    max-width: 1200px;
+    transition: all 0.3s ease;
+}
+
+#revenueContainer h2 {
+    color: #6a0dad;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
     text-align: center;
 }
 
-table tbody tr {
-    border-bottom: 1px solid #eee;
-    transition: 0.2s;
+/* Revenue Total */
+#revenueContainer p strong {
+    font-size: 18px;
+    color: #6a0dad;
 }
 
-table tbody tr:hover {
+/* Completed Orders Table */
+#revenueContainer table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+#revenueContainer table thead {
+    background: #6a0dad;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#revenueContainer table th,
+#revenueContainer table td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+/* Rounded corners for first and last table headers/cells */
+#revenueContainer table thead th:first-child {
+    border-top-left-radius: 15px;
+}
+#revenueContainer table thead th:last-child {
+    border-top-right-radius: 15px;
+}
+
+#revenueContainer table tbody tr {
+    transition: background 0.3s;
+    background: #fff;
+}
+
+#revenueContainer table tbody tr:hover {
     background-color: #f3e8ff;
 }
 
-/* ================= TABLE BUTTON ================= */
-.table-btn {
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: none;
-    background: #6a0dad;
-    color: white;
-    cursor: pointer;
-    font-size: 13px;
-    transition: 0.3s;
+/* Table bottom row rounding */
+#revenueContainer table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+#revenueContainer table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
 }
 
-.table-btn:hover {
-    background: #4a0072;
-}
-
-/* ================= EXTRA INFO ================= */
-#extraChargeMessage {
-    margin-top: 10px;
-    font-weight: 600;
-    color: red;
-}
-
-#feedbackStars {
-    color: #ffcc00;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* ================= RESPONSIVE ================= */
+/* Responsive */
 @media (max-width: 768px) {
-    .board {
+    .cards-container {
         flex-direction: column;
+        gap: 20px;
     }
 
-    .sidebar {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
 
-    .sidebar button {
-        flex: 1 1 40%;
-        margin: 5px;
+    #revenueContainer {
+        padding: 25px 20px;
     }
-}
 
-/* ================= ANIMATION ================= */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    #revenueContainer table th,
+    #revenueContainer table td {
+        padding: 12px 8px;
+        font-size: 14px;
     }
 }

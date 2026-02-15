@@ -1,0 +1,132 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6fb;
+    padding: 30px;
+    color: #333;
+}
+
+/* ================= HEADINGS ================= */
+h1 {
+    text-align: center;
+    color: #6a0dad;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #6a0dad;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+}
+
+table thead {
+    background-color: #6a0dad;
+    color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+table tbody tr:hover {
+    background-color: #f3e8ff;
+}
+
+/* ================= BUTTONS ================= */
+.table-btn {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+    background: #6a0dad;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.table-btn:hover {
+    background: #4a0072;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background: #6a0dad;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #4a0072;
+}
+
+/* ================= ORDER DETAILS ================= */
+#orderDetailsContainer {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+}
+
+#extraChargeMessage {
+    font-weight: 600;
+    color: red;
+}
+
+#feedbackStars {
+    color: #ffcc00;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}
